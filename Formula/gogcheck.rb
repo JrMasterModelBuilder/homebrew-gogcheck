@@ -19,19 +19,35 @@ class Gogcheck < Formula
     inreplace "gogcheck",
       "certfile=/etc/ssl/certs/ca-certificates.crt",
       "certfile='#{HOMEBREW_PREFIX}/share/ca-certificates/cacert.pem'"
+    inreplace "gogcheck",
+      "Download the latest version from https://github.com/mtrojnar/osslsigncode.",
+      "Run `brew install osslsigncode` to install."
+    inreplace "gogcheck",
+      "Download the latest version from https://constexpr.org/innoextract.",
+      "Run `brew install innoextract` to install."
+    inreplace "gogcheck",
+      "Download the latest UnRAR version from https://www.rarlab.com/rar_add.htm.",
+      "Run `brew install rar` to install."
     bin.install "gogcheck"
   end
 
   test do
     system "#{bin}/gogcheck", "-h"
-    exe = "#{testpath}/setup_test.exe"
-    touch "#{exe}"
+    touch "#{testpath}/setup_test.exe"
     output = shell_output("#{bin}/gogcheck #{testpath}/setup_test.exe 2>&1", 1)
     assert_match "Running signature check...", output
+    assert_match "Unrecognized file type - file is too short: setup_test.exe", output
+    assert_match "Failed", output
     assert_match "Running binary check...", output
+    assert_match "No bin file checksums found.", output
+    assert_match "No matching bin files found either.", output
+    assert_match "Is this exe a GOG installer?", output
     assert_match "Running innoextract check...", output
-    assert_match "[1] #{exe} (digital signature error)", output
-    assert_match "[1] #{exe} (not a GOG installer?)", output
-    assert_match "[1] #{exe} (innoextract file probing)", output
+    assert_match "Not a supported Inno Setup installer!", output
+    assert_match "innoextract reported errors while probing the file.", output
+    assert_match "Files that produced errors:", output
+    assert_match "[1] #{testpath}/setup_test.exe (digital signature error)", output
+    assert_match "[1] #{testpath}/setup_test.exe (not a GOG installer?)", output
+    assert_match "[1] #{testpath}/setup_test.exe (innoextract file probing)", output
   end
 end
