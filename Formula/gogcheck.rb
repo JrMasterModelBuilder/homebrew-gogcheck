@@ -21,13 +21,13 @@ class Gogcheck < Formula
       "certfile='#{HOMEBREW_PREFIX}/share/ca-certificates/cacert.pem'"
     inreplace "gogcheck",
       "Download the latest version from https://github.com/mtrojnar/osslsigncode.",
-      "Run `brew install osslsigncode` to install."
+      "Install `osslsigncode` to use this check."
     inreplace "gogcheck",
       "Download the latest version from https://constexpr.org/innoextract.",
-      "Run `brew install innoextract` to install."
+      "Install `innoextract` to use this check."
     inreplace "gogcheck",
       "Download the latest UnRAR version from https://www.rarlab.com/rar_add.htm.",
-      "Run `brew install --cask rar` to install."
+      "Install `unrar` to use this check."
     bin.install "gogcheck"
   end
 
