@@ -27,7 +27,7 @@ class Gogcheck < Formula
       "Run `brew install innoextract` to install."
     inreplace "gogcheck",
       "Download the latest UnRAR version from https://www.rarlab.com/rar_add.htm.",
-      "Run `brew install rar` to install."
+      "Run `brew install --cask rar` to install."
     bin.install "gogcheck"
   end
 
