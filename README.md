@@ -26,3 +26,11 @@ $ brew tap JrMasterModelBuilder/gogcheck
 ```
 $ brew install gogcheck
 ```
+
+## Dependencies
+
+To support all the check methods, also install:
+
+-   `osslsigncode` (`brew install osslsigncode`)
+-   `innoextract` (`brew install innoextract`)
+-   `unrar` (macOS: `brew install --cask rar`, Debian: `apt-get install unrar`)
