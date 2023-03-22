@@ -27,7 +27,7 @@ jobs:
         run: brew install innoextract
 
       - name: Optional rar
-        run: apt install unrar
+        run: apt-get install unrar
 
       - name: Tap Dir
         run: mkdir -p "$(brew --repo)/Library/Taps/$(dirname "${{ github.repository }}" | tr '[:upper:]' '[:lower:]')"
