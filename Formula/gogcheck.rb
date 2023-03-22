@@ -5,20 +5,24 @@ class Gogcheck < Formula
   version "2022-12-14"
   sha256 "487890f019ce87580708036eed435cdea049e021a2b99d349a09893d5b89542a"
 
-  depends_on "bash"
-  depends_on "ca-certificates"
-  depends_on "grep"
+  on_macos do
+    depends_on "bash"
+    depends_on "ca-certificates"
+    depends_on "grep"
+  end
 
   def install
     inreplace "gogcheck",
       "#!/bin/bash",
       "#!/usr/bin/env bash"
-    inreplace "gogcheck",
-      "grep",
-      "ggrep"
-    inreplace "gogcheck",
-      "certfile=/etc/ssl/certs/ca-certificates.crt",
-      "certfile='#{HOMEBREW_PREFIX}/share/ca-certificates/cacert.pem'"
+    if OS.mac?
+      inreplace "gogcheck",
+        "grep",
+        "ggrep"
+      inreplace "gogcheck",
+        "certfile=/etc/ssl/certs/ca-certificates.crt",
+        "certfile='#{HOMEBREW_PREFIX}/share/ca-certificates/cacert.pem'"
+    end
     inreplace "gogcheck",
       "Download the latest version from https://github.com/mtrojnar/osslsigncode.",
       "Install `osslsigncode` to use this check."
