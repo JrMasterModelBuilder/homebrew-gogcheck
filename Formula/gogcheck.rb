@@ -40,7 +40,7 @@ class Gogcheck < Formula
     touch "#{testpath}/setup_test.exe"
     output = shell_output("#{bin}/gogcheck #{testpath}/setup_test.exe 2>&1", 1)
     assert_match "Running signature check...", output
-    assert_match "Unrecognized file type - file is too short: setup_test.exe", output
+    assert_match "Unrecognized file type - file is too short: #{testpath}/setup_test.exe", output
     assert_match "Failed", output
     assert_match "Running binary check...", output
     assert_match "No bin file checksums found.", output
