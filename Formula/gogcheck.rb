@@ -25,13 +25,13 @@ class Gogcheck < Formula
     end
     inreplace "gogcheck",
       "Download the latest version from https://github.com/mtrojnar/osslsigncode.",
-      "Install `osslsigncode` to use this check."
+      "Install dependency to use this check."
     inreplace "gogcheck",
       "Download the latest version from https://constexpr.org/innoextract.",
-      "Install `innoextract` to use this check."
+      "Install dependency to use this check."
     inreplace "gogcheck",
       "Download the latest UnRAR version from https://www.rarlab.com/rar_add.htm.",
-      "Install `unrar` to use this check."
+      "Install dependency to use this check."
     bin.install "gogcheck"
   end
 
