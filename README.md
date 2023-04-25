@@ -12,8 +12,6 @@ Homebrew tap for gogcheck
 
 [![Build Status](https://github.com/JrMasterModelBuilder/homebrew-gogcheck/workflows/Ubuntu%2020.04/badge.svg?branch=main)](https://github.com/JrMasterModelBuilder/homebrew-gogcheck/actions?query=workflow%3AUbuntu%2020.04+branch%3Amain)
 
-[![Build Status](https://github.com/JrMasterModelBuilder/homebrew-gogcheck/workflows/Ubuntu%2018.04/badge.svg?branch=main)](https://github.com/JrMasterModelBuilder/homebrew-gogcheck/actions?query=workflow%3AUbuntu%2018.04+branch%3Amain)
-
 
 # Usage
 
