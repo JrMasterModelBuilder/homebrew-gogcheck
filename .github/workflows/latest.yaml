@@ -16,9 +16,7 @@ jobs:
         uses: actions/checkout@v3
 
       - name: Check Latest
-        run: |
-          curl -f -L -o /tmp/gogcheck https://raw.githubusercontent.com/hippie68/gogcheck/master/gogcheck
-          shasum -c <<< '0e5a4d2d10e65989d92f8742627ead67de5345762ec002aa44d727aabf54db9c */tmp/gogcheck'
+        run: ./test/latest.sh
 
       - name: Keep Alive
         uses: gautamkrishnar/keepalive-workflow@v1
