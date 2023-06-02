@@ -1,0 +1,27 @@
+name: Latest
+
+on:
+  schedule:
+    - cron: '0 0 * * *'
+
+jobs:
+  build:
+    if: github.repository == 'JrMasterModelBuilder/homebrew-gogcheck'
+
+    runs-on: ubuntu-22.04
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+
+      - name: Check Latest
+        run: |
+          curl -f -L -o /tmp/gogcheck https://raw.githubusercontent.com/hippie68/gogcheck/master/gogcheck
+          shasum -c <<< '0e5a4d2d10e65989d92f8742627ead67de5345762ec002aa44d727aabf54db9c */tmp/gogcheck'
+
+      - name: Keep Alive
+        uses: gautamkrishnar/keepalive-workflow@v1
+        with:
+          commit_message: ${{ env.KA_COMMIT_MESSAGE }}
+          committer_username: ${{ env.KA_COMMIT_USER }}
+          committer_email: ${{ secrets.KA_COMMIT_EMAIL }}
