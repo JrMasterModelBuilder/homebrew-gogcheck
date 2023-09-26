@@ -39,9 +39,9 @@ class Gogcheck < Formula
     assert_match "Unrecognized file type - file is too short: #{testpath}/setup_test.exe", output
     assert_match "Failed", output
     assert_match "Running binary check...", output
-    assert_match "No bin file checksums found.", output
-    assert_match "No matching bin files found either.", output
-    assert_match "Is this exe a GOG installer?", output
+    assert_match "No .bin file checksums found.", output
+    assert_match "No matching .bin files found either.", output
+    assert_match "Is this .exe a GOG installer?", output
     assert_match "Running innoextract check...", output
     assert_match "Not a supported Inno Setup installer!", output
     assert_match "innoextract reported errors while probing the file.", output
