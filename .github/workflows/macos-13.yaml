@@ -20,6 +20,9 @@ jobs:
       - name: Homebrew
         uses: Homebrew/actions/setup-homebrew@master
 
+      - name: Pre-installed Workaround
+        run: brew remove php
+
       - name: Optional osslsigncode
         run: brew install osslsigncode
 
