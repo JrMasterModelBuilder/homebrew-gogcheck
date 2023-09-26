@@ -7,7 +7,6 @@ class Gogcheck < Formula
 
   on_macos do
     depends_on "bash"
-    depends_on "ca-certificates"
     depends_on "grep"
   end
 
@@ -19,9 +18,6 @@ class Gogcheck < Formula
       inreplace "gogcheck",
         "grep",
         "ggrep"
-      inreplace "gogcheck",
-        "certfile=/etc/ssl/certs/ca-certificates.crt",
-        "certfile='#{HOMEBREW_PREFIX}/share/ca-certificates/cacert.pem'"
     end
     inreplace "gogcheck",
       "Download the latest version from https://github.com/mtrojnar/osslsigncode.",
