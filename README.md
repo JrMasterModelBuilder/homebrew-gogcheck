@@ -31,6 +31,10 @@ $ brew install gogcheck
 
 To support all the check methods, also install:
 
--   `osslsigncode` (`brew install osslsigncode`)
--   `innoextract` (`brew install innoextract`)
--   `unrar` (macOS: `brew install --cask rar`, Debian: `apt-get install unrar`)
+-   `md5sum`: `brew install coreutils` or `brew install md5sha1sum`
+-   `osslsigncode`: `brew install osslsigncode`
+-   `innoextract`: `brew install innoextract`
+-   `unrar` or `unar`:
+    -   `unrar` macOS: `brew install --cask rar`
+    -   `unrar` Debian: `apt-get install unrar`
+    -   `unar`: `brew install unar`

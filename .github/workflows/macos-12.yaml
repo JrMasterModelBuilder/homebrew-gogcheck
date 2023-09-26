@@ -26,6 +26,9 @@ jobs:
       - name: Optional innoextract
         run: brew install innoextract
 
+      - name: Optional coreutils
+        run: brew install coreutils
+
       - name: Optional rar
         run: brew install --cask rar
 
