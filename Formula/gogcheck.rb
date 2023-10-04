@@ -18,16 +18,16 @@ class Gogcheck < Formula
         s.gsub! /\bgrep\b/, "ggrep"
         s.gsub! /\bfind\b/, "gfind"
       end
+      s.gsub!
+        "Download the latest version from https://github.com/mtrojnar/osslsigncode.",
+        "Install dependency to use this check."
+      s.gsub!
+        "Download the latest version from https://constexpr.org/innoextract.",
+        "Install dependency to use this check."
+      s.gsub!
+        "Download the latest UnRAR version from https://www.rarlab.com/rar_add.htm.",
+        "Install dependency to use this check."
     end
-    inreplace "gogcheck",
-      "Download the latest version from https://github.com/mtrojnar/osslsigncode.",
-      "Install dependency to use this check."
-    inreplace "gogcheck",
-      "Download the latest version from https://constexpr.org/innoextract.",
-      "Install dependency to use this check."
-    inreplace "gogcheck",
-      "Download the latest UnRAR version from https://www.rarlab.com/rar_add.htm.",
-      "Install dependency to use this check."
     bin.install "gogcheck"
   end
 
