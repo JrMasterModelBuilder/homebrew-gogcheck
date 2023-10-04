@@ -8,16 +8,16 @@ class Gogcheck < Formula
   on_macos do
     depends_on "bash"
     depends_on "grep"
+    depends_on "findutils"
   end
 
   def install
-    inreplace "gogcheck",
-      "#!/bin/bash",
-      "#!/usr/bin/env bash"
-    if OS.mac?
-      inreplace "gogcheck",
-        "grep",
-        "ggrep"
+    inreplace "gogcheck" do |s|
+      if OS.mac?
+        s.gsub! "#!/bin/bash", "#!/usr/bin/env bash"
+        s.gsub! /\bgrep\b/, "ggrep"
+        s.gsub! /\bfind\b/, "gfind"
+      end
     end
     inreplace "gogcheck",
       "Download the latest version from https://github.com/mtrojnar/osslsigncode.",
