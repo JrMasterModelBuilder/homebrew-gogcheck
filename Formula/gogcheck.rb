@@ -13,8 +13,8 @@ class Gogcheck < Formula
 
   def install
     inreplace "gogcheck" do |s|
+      s.gsub! "#!/bin/bash", "#!/usr/bin/env bash"
       if OS.mac?
-        s.gsub! "#!/bin/bash", "#!/usr/bin/env bash"
         s.gsub! /\bgrep\b/, "ggrep"
         s.gsub! /\bfind\b/, "gfind"
       end
