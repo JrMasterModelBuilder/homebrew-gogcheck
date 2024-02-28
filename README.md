@@ -17,14 +17,14 @@ Homebrew tap for gogcheck
 
 ## Tap
 
-```
-$ brew tap JrMasterModelBuilder/gogcheck
+```sh
+brew tap JrMasterModelBuilder/gogcheck
 ```
 
 ## Install
 
-```
-$ brew install gogcheck
+```sh
+brew install gogcheck
 ```
 
 ## Dependencies
