@@ -4,7 +4,7 @@ set -o nounset
 set -o pipefail
 
 source='https://raw.githubusercontent.com/hippie68/gogcheck/master/gogcheck'
-expected='a9097af7d36a9301d63bbd9394067471b76c37f4da07eab19d1663b5c7d70564'
+expected='73a978eb95f02cf3c49bdc7865b64ce2113e06c6f87342af5f49856a00938455'
 
 sha256="$(curl -f -L -s "${source}" | shasum -a 256 -b | cut -d' ' -f1)"
 if [[ "${sha256}" == "${expected}" ]]; then

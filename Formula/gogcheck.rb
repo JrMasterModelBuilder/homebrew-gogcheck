@@ -1,10 +1,9 @@
 class Gogcheck < Formula
   desc "Bash script that verifies your GOG offline installers' authenticity and checksums"
   homepage "https://github.com/hippie68/gogcheck"
-  url "https://github.com/JrMasterModelBuilder/homebrew-gogcheck/releases/download/sources/gogcheck-2023-09-28-ad16558a86af4cbd28d6b028464d956c4e567db8.zip"
-  version "2023-09-28"
-  revision 1
-  sha256 "42e7248d010a2ce4683669822911f835f3e3e85a35e1de08b92d9a7dcae45d3e"
+  url "https://github.com/JrMasterModelBuilder/homebrew-gogcheck/releases/download/sources/gogcheck-2024-04-13-466a1bc6469f51a15e2e11781c06ae3f924b41bc.zip"
+  version "2024-04-13"
+  sha256 "3e72b4cdac1c60e88832c0efe8adb9b4a43beeab2b16a44f39e8a01d04876330"
 
   on_macos do
     depends_on "bash"
@@ -15,7 +14,6 @@ class Gogcheck < Formula
   def install
     inreplace "gogcheck" do |s|
       s.gsub! "#!/bin/bash", "#!/usr/bin/env bash"
-      s.gsub! "#certfile=", 'certfile="${GOGCHECK_CERTFILE:-}"'
       if OS.mac?
         s.gsub! /\bgrep\b/, "ggrep"
         s.gsub! /\bfind\b/, "gfind"
