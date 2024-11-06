@@ -40,6 +40,11 @@ jobs:
 
       - name: Optional rar
         run: brew install --cask rar
+        if: ${{ startsWith(matrix.host, 'macos-') }}
+
+      - name: Optional unrar
+        run: sudo apt-get install unrar
+        if: ${{ startsWith(matrix.host, 'ubuntu-') }}
 
       - name: Tap Dir
         run: mkdir -p "$(brew --repo)/Library/Taps/$(dirname "${{ github.repository }}" | tr '[:upper:]' '[:lower:]')"
