@@ -4,6 +4,7 @@ class Gogcheck < Formula
   url "https://github.com/JrMasterModelBuilder/homebrew-gogcheck/releases/download/sources/gogcheck-2025-04-11-1c3e32ff9c0bdcc758de300eea93b1dba77ae904.zip"
   version "2025-04-11"
   sha256 "f15d9ffb9a6f9bd446c2af683245c0c4ffef184a00227d1cc832f377cb3c6567"
+  revision 1
 
   on_macos do
     depends_on "bash"
@@ -14,6 +15,7 @@ class Gogcheck < Formula
   def install
     inreplace "gogcheck" do |s|
       s.gsub! "#!/bin/bash", "#!/usr/bin/env bash"
+      s.gsub! "[[ $osslsigncode_output != *'/O=GOG '* ]]", "[[ $osslsigncode_output != *',O=GOG '* && $osslsigncode_output != *'/O=GOG '* ]]"
       if OS.mac?
         s.gsub! /\bgrep\b/, "ggrep"
         s.gsub! /\bfind\b/, "gfind"
