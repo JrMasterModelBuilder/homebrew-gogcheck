@@ -1,9 +1,9 @@
 class Gogcheck < Formula
   desc "Bash script that verifies your GOG offline installers' authenticity and checksums"
   homepage "https://github.com/hippie68/gogcheck"
-  url "https://github.com/JrMasterModelBuilder/homebrew-gogcheck/releases/download/sources/gogcheck-2025-07-25-9d7130258a0e93dd8db7ae0b06c6034000a4b4bc.zip"
-  version "2025-07-25"
-  sha256 "e32c24e820bda0c8d8b50fb302f8dd5b9cdaf07f45270bfbe1213a4c88ad77a3"
+  url "https://github.com/JrMasterModelBuilder/homebrew-gogcheck/releases/download/sources/gogcheck-2025-07-29-1a8d735634d732f39ef20dbc87f35e4b9ef56cfb.zip"
+  version "2025-07-29"
+  sha256 "4e81a28b2513a862d281ee5aefd31a49cb3ab4a9d8a213cc217381bba54531d4"
 
   on_macos do
     depends_on "bash"
