@@ -32,17 +32,8 @@ jobs:
       - name: Homebrew
         uses: Homebrew/actions/setup-homebrew@master
 
-      - name: Optional osslsigncode
-        run: brew install osslsigncode
-
-      - name: Optional innoextract
-        run: brew install innoextract
-
-      - name: Optional coreutils
-        run: brew install coreutils
-
-      - name: Optional unar
-        run: brew install unar
+      - name: Optional tools
+        run: brew install coreutils osslsigncode innoextract unar
 
       - name: Tap Dir
         run: mkdir -p "$(brew --repo)/Library/Taps/$(dirname "${{ github.repository }}" | tr '[:upper:]' '[:lower:]')"
