@@ -8,6 +8,7 @@ Homebrew tap for gogcheck
 
 ```sh
 brew tap JrMasterModelBuilder/gogcheck
+brew trust JrMasterModelBuilder/gogcheck
 ```
 
 ## Install
