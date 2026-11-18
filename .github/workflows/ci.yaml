@@ -51,7 +51,7 @@ jobs:
         run: brew info "${{ matrix.name }}"
 
       - name: Install
-        run: brew install -v --keep-tmp "${{ matrix.name }}"
+        run: brew install --verbose --keep-tmp "${{ matrix.name }}"
         env:
           HOMEBREW_TEMP: /tmp/brewtemp
 
